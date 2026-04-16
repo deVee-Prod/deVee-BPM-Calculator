@@ -33,7 +33,6 @@ export default function BPMCalculator() {
       let finalBpm = Math.round(detectedBpm)
 
       // תיקון טווח מוזיקלי סטנדרטי (70-150)
-      // זה יבטיח ש-Hydrate יזוהה כ-75 ולא כ-37 או 300
       while (finalBpm < 70) finalBpm *= 2
       while (finalBpm > 150) finalBpm /= 2
       
@@ -64,20 +63,22 @@ export default function BPMCalculator() {
   }
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-between overflow-hidden bg-black text-white px-4 py-12">
+    <div className="relative min-h-screen flex flex-col items-center overflow-hidden bg-black text-white px-6 py-10">
       
+      {/* Background Glows */}
       <div className="pointer-events-none fixed inset-0">
         <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff007f]/10 blur-[120px]" />
         <div className="absolute left-1/2 top-0 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-[#ff007f]/20 blur-[100px]" />
       </div>
 
-      <header className="relative z-10 flex flex-col items-center gap-4 animate-in fade-in slide-in-from-top duration-700">
+      {/* 1. HEADER - Pushed to top */}
+      <header className="relative z-10 flex-none flex flex-col items-center gap-4 animate-in fade-in slide-in-from-top duration-700">
         <div className="relative group flex flex-col items-center">
           <div className="absolute inset-0 rounded-full bg-[#ff007f]/30 blur-3xl group-hover:bg-[#ff007f]/50 transition-all duration-500" />
           <img
             src="/BPM Calculator icon.png"
             alt="BPM Calculator"
-            className="relative h-28 w-28 object-contain"
+            className="relative h-24 w-24 object-contain"
           />
         </div>
         <h1 className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/50">
@@ -85,8 +86,9 @@ export default function BPMCalculator() {
         </h1>
       </header>
 
-      <main className="relative z-10 w-full max-w-md animate-in fade-in zoom-in duration-500">
-        <div className="relative rounded-[2.5rem] border border-dashed border-white/10 bg-[#111]/80 p-8 shadow-2xl backdrop-blur-3xl">
+      {/* 2. CENTER PANEL - Using flex-1 to center vertically and add space */}
+      <main className="relative z-10 w-full flex-1 flex items-center justify-center max-w-md animate-in fade-in zoom-in duration-500 my-8">
+        <div className="relative w-full rounded-[2.5rem] border border-dashed border-white/10 bg-[#111]/80 p-8 shadow-2xl backdrop-blur-3xl">
           <div className="flex flex-col items-center gap-8">
             <div className="flex flex-col items-center justify-center min-h-[160px] w-full">
               {bpm ? (
@@ -141,7 +143,7 @@ export default function BPMCalculator() {
               </button>
 
               {isDropdownOpen && (
-                <div className="absolute left-0 top-full z-20 mt-2 w-full overflow-hidden rounded-xl border border-white/10 bg-[#181818] shadow-2xl">
+                <div className="absolute left-0 bottom-full z-20 mb-2 w-full overflow-hidden rounded-xl border border-white/10 bg-[#181818] shadow-2xl">
                   {segments.map((s) => (
                     <button
                       key={s}
@@ -175,11 +177,12 @@ export default function BPMCalculator() {
         </div>
       </main>
 
-      <footer className="relative z-10 flex flex-col items-center gap-4 pb-4 animate-in fade-in slide-in-from-bottom duration-700">
-        <p className="text-[11px] font-medium tracking-wider text-white/40">
+      {/* 3. FOOTER - Pushed to bottom */}
+      <footer className="relative z-10 flex-none flex flex-col items-center gap-4 pb-4 animate-in fade-in slide-in-from-bottom duration-700">
+        <p className="text-[10px] font-medium tracking-wider text-white/30">
           Powered By deVee Boutique Label
         </p>
-        <div className="h-16 w-16 overflow-hidden rounded-full border border-white/10 shadow-lg">
+        <div className="h-14 w-14 overflow-hidden rounded-full border border-white/10 shadow-lg">
           <img
             src="/label_logo.jpg"
             alt="deVee Boutique Label"
