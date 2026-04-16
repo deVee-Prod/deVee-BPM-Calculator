@@ -16,7 +16,7 @@ export default function BPMCalculator() {
 
   const segments = ["FULL TRACK", "FIRST 30 SECONDS", "MIDDLE SECTION", "LAST 30 SECONDS"]
 
-  // החלפת הפונקציה לשימוש בספרייה המקצועית
+  // החלפת הפונקציה לשימוש בספרייה המקצועית + Downsampling למהירות במובייל
   const analyzeBPM = async () => {
     if (!audioFile) return
     setIsAnalyzing(true)
@@ -27,8 +27,17 @@ export default function BPMCalculator() {
       const arrayBuffer = await audioFile.arrayBuffer()
       const audioBuffer = await audioContext.decodeAudioData(arrayBuffer)
       
-      // שימוש באלגוריתם ה-Autocorrelation של הספרייה
-      const detectedBpm = await analyze(audioBuffer)
+      // ביצוע Downsampling ל-16kHz - זה חותך את כמות הנתונים פי 3 ומזרז את הניתוח בטירוף
+      const offlineCtx = new OfflineAudioContext(1, audioBuffer.duration * 16000, 16000)
+      const source = offlineCtx.createBufferSource()
+      source.buffer = audioBuffer
+      source.connect(offlineCtx.destination)
+      source.start()
+      
+      const resampledBuffer = await offlineCtx.startRendering()
+      
+      // שימוש באלגוריתם ה-Autocorrelation על הבאפר המופחת
+      const detectedBpm = await analyze(resampledBuffer)
       
       let finalBpm = Math.round(detectedBpm)
 
@@ -108,10 +117,11 @@ export default function BPMCalculator() {
                 </div>
               ) : (
                 <div className="flex flex-col items-center gap-4">
+                  {/* התיקון לבחירת קבצים במובייל */}
                   <input
                     ref={fileInputRef}
                     type="file"
-                    accept="audio/*"
+                    accept=".wav,.mp3,.aac,.m4a,.ogg,audio/*"
                     onChange={handleFileUpload}
                     className="hidden"
                   />
