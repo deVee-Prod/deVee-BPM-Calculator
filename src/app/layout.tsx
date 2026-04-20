@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: "Professional BPM detection tool by deVee Boutique Label",
   icons: {
     icon: [
-      { url: "/BPM Calculator icon.png?v=1", href: "/BPM Calculator icon.png?v=1" },
+      { url: "/BPM Calculator icon.png?v=1", href: "/BPM-Calculator-icon.png?v=1" },
     ],
     apple: [
       { url: "/apple-touch-icon.png?v=1", href: "/apple-touch-icon.png?v=1" },
