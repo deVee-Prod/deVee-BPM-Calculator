@@ -79,7 +79,7 @@ export default function BPMCalculator() {
       </div>
 
       {/* 1. HEADER - Pushed to top */}
-      <header className="relative z-10 flex-none flex flex-col items-center gap-4 animate-in fade-in slide-in-from-top duration-700">
+      <header className="relative z-10 flex-none flex flex-col items-center gap-4">
         <div className="relative group flex flex-col items-center">
           <div className="absolute inset-0 rounded-full bg-[#ff007f]/30 blur-3xl group-hover:bg-[#ff007f]/50 transition-all duration-500" />
           <img
@@ -94,12 +94,12 @@ export default function BPMCalculator() {
       </header>
 
       {/* 2. CENTER PANEL - Using flex-1 to center vertically and add space */}
-      <main className="relative z-10 w-full flex-1 flex items-center justify-center max-w-md animate-in fade-in zoom-in duration-500 my-8">
+      <main className="relative z-10 w-full flex-1 flex items-center justify-center max-w-md my-8">
         <div className="relative w-full rounded-[2.5rem] border border-dashed border-white/10 bg-[#111]/80 p-8 shadow-2xl backdrop-blur-3xl">
           <div className="flex flex-col items-center gap-8">
             <div className="flex flex-col items-center justify-center min-h-[160px] w-full">
               {bpm ? (
-                <div className="flex flex-col items-center animate-in zoom-in duration-300">
+                <div className="flex flex-col items-center">
                   <span className="text-8xl font-black tracking-tighter text-[#ff007f] drop-shadow-[0_0_30px_rgba(255,0,127,0.6)]">
                     {bpm}
                   </span>
@@ -186,7 +186,7 @@ export default function BPMCalculator() {
       </main>
 
       {/* 3. FOOTER - Pushed to bottom */}
-      <footer className="relative z-10 flex-none flex flex-col items-center gap-4 pb-4 animate-in fade-in slide-in-from-bottom duration-700">
+      <footer className="relative z-10 flex-none flex flex-col items-center gap-4 pb-4">
         <p className="text-[10px] font-medium tracking-wider text-white/30">
           Powered By deVee Boutique Label
         </p>
