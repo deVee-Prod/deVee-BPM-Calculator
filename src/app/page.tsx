@@ -2,8 +2,6 @@
 
 import { useState, useRef } from "react"
 import { Upload, ChevronDown, Music, Loader2, RotateCcw } from "lucide-react"
-// הייבוא של הספרייה המקצועית
-import { analyze } from "web-audio-beat-detector"
 
 export default function BPMCalculator() {
   const [selectedSegment, setSelectedSegment] = useState("FULL TRACK")
@@ -35,8 +33,8 @@ export default function BPMCalculator() {
       source.start()
       
       const resampledBuffer = await offlineCtx.startRendering()
-      
-      // שימוש באלגוריתם ה-Autocorrelation על הבאפר המופחת
+
+      const { analyze } = await import("web-audio-beat-detector")
       const detectedBpm = await analyze(resampledBuffer)
       
       let finalBpm = Math.round(detectedBpm)
