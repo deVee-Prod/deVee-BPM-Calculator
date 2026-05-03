@@ -85,7 +85,7 @@ export default function BPMCalculator() {
         <div className="relative group flex flex-col items-center">
           <div className="absolute inset-0 rounded-full bg-[#ff007f]/30 blur-3xl group-hover:bg-[#ff007f]/50 transition-all duration-500" />
           <img
-            src="/BPM Calculator icon.png"
+            src="/bpm-icon.png"
             alt="BPM Calculator"
             className="relative h-24 w-24 object-contain"
           />
