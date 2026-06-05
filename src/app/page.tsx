@@ -6,7 +6,7 @@ const BPMApp = dynamic(() => import('./bpm-app'), {
   ssr: false,
   loading: () => (
     <main style={{
-      position: 'fixed', inset: 0, background: '#000', color: '#fff',
+      position: 'fixed', inset: 0, color: '#fff',
       display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
       gap: '16px', fontFamily: 'Arial, sans-serif'
     }}>
@@ -29,7 +29,7 @@ export default function Page() {
   if (!entered) {
     return (
       <main style={{
-        position: 'fixed', inset: 0, background: '#000', color: '#fff',
+        position: 'fixed', inset: 0, color: '#fff',
         display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
         gap: '24px', fontFamily: 'Arial, sans-serif'
       }}>

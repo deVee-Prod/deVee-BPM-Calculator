@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { DriftingGridBackground } from './components/DriftingGridBackground';
 
 export const metadata: Metadata = {
   title: "BPM Calculator",
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className="min-h-full flex flex-col bg-black">{children}</body>
+      <body className="relative min-h-full flex flex-col">
+        <DriftingGridBackground />
+        <div className="relative z-10 flex flex-col min-h-full">{children}</div>
+      </body>
     </html>
   );
 }
