@@ -70,7 +70,7 @@ export default function BPMCalculator() {
   }
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center overflow-hidden text-white px-6 py-10">
+    <div className="relative min-h-[100dvh] flex flex-col items-center overflow-hidden text-white px-6 py-10">
       
       {/* Background Glows */}
       <div className="pointer-events-none fixed inset-0">
