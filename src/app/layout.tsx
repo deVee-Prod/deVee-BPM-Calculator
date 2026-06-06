@@ -3,6 +3,7 @@ import "./globals.css";
 import { DriftingGridBackground } from './components/DriftingGridBackground';
 import { ToolHeader } from './components/ToolHeader';
 
+
 export const metadata: Metadata = {
   title: "BPM Calculator",
   description: "Professional BPM detection tool by deVee Boutique Label",
