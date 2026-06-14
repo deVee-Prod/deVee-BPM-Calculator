@@ -192,7 +192,7 @@ export default function BPMCalculator() {
         </p>
         <div className="h-14 w-14 overflow-hidden rounded-full border border-white/10 shadow-lg">
           <img
-            src="/label_logo.jpg"
+            src="/label_logo.png"
             alt="deVee Boutique Label"
             className="h-full w-full object-cover"
           />
