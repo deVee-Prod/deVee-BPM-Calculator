@@ -6,7 +6,7 @@ import { ToolHeader } from './components/ToolHeader';
 
 export const metadata: Metadata = {
   title: "BPM Calculator",
-  description: "Professional BPM detection tool by deVee Boutique Label",
+  description: "Calculate the exact BPM for any song you input.",
   icons: {
     icon: "/bpm-icon.png",
     apple: "/apple-touch-icon.png",
