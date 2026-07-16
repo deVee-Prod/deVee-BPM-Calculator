@@ -79,18 +79,9 @@ export default function BPMCalculator() {
       </div>
 
       {/* 1. HEADER - Pushed to top */}
-      <header className="relative z-10 flex-none flex flex-col items-center gap-4">
-        <div className="relative group flex flex-col items-center">
-          <div className="absolute inset-0 rounded-full bg-[#ff007f]/30 blur-3xl group-hover:bg-[#ff007f]/50 transition-all duration-500" />
-          <img
-            src="/bpm-icon.png"
-            alt="BPM Calculator"
-            className="relative h-24 w-24 object-contain"
-          />
-        </div>
-        <h1 className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/50">
-          BPM Calculator
-        </h1>
+      <header className="relative z-20 flex flex-col items-center shrink-0 mb-4 pt-6">
+        <img src="/bpm-icon.png" alt="BPM Calculator" className="w-[100px] h-[100px] mb-2 object-contain" />
+        <h1 className="text-[10px] font-bold tracking-[0.5em] uppercase text-white/60">BPM Calculator</h1>
       </header>
 
       {/* 2. CENTER PANEL - Using flex-1 to center vertically and add space */}
