@@ -70,7 +70,7 @@ export default function BPMCalculator() {
   }
 
   return (
-    <div className="relative min-h-[100dvh] flex flex-col items-center overflow-hidden text-white px-6 py-10">
+    <div className="relative min-h-[100dvh] flex flex-col items-center overflow-hidden text-white px-6 pb-10">
       
       {/* Background Glows */}
       <div className="pointer-events-none fixed inset-0">
@@ -79,7 +79,7 @@ export default function BPMCalculator() {
       </div>
 
       {/* 1. HEADER - Pushed to top */}
-      <header className="relative z-20 flex flex-col items-center shrink-0 mb-4 pt-6">
+      <header className="w-full relative z-20 flex flex-col items-center shrink-0 mt-8 mb-6">
         <img src="/bpm-icon.png" alt="BPM Calculator" className="w-[100px] h-[100px] mb-2 object-contain" />
         <h1 className="text-[10px] font-bold tracking-[0.5em] uppercase text-white/60">BPM Calculator</h1>
       </header>
