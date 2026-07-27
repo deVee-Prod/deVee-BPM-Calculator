@@ -85,10 +85,10 @@ export default function BPMCalculator() {
       </header>
 
       {/* 2. CENTER PANEL - Using flex-1 to center vertically and add space */}
-      <main className="relative z-10 w-full flex-1 flex items-center justify-center max-w-md my-8">
-        <div className="relative w-full rounded-[2.5rem] border border-dashed border-white/10 bg-[#111]/80 p-8 shadow-2xl backdrop-blur-3xl">
+      <main className="relative z-10 w-full flex-1 flex items-center justify-center max-w-xl my-8">
+        <div className="w-full bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] p-10 space-y-8 border border-white/5 shadow-2xl relative z-20">
           <div className="flex flex-col items-center gap-8">
-            <div className="flex flex-col items-center justify-center min-h-[160px] w-full">
+            <div className="flex flex-col items-center justify-center w-full">
               {bpm ? (
                 <div className="flex flex-col items-center">
                   <span className="text-8xl font-black tracking-tighter text-[#ff007f] drop-shadow-[0_0_30px_rgba(255,0,127,0.6)]">
@@ -105,22 +105,21 @@ export default function BPMCalculator() {
                   </button>
                 </div>
               ) : (
-                <div className="flex flex-col items-center gap-4">
-                  {/* התיקון לבחירת קבצים במובייל */}
+                <div 
+                  className="relative w-full border-2 border-dashed rounded-2xl p-12 transition-all duration-500 flex flex-col items-center gap-4 cursor-pointer z-10 border-white/10 hover:border-[#ff007f]/40 hover:bg-[#ff007f]/5"
+                  onClick={() => fileInputRef.current?.click()}
+                >
                   <input
                     ref={fileInputRef}
                     type="file"
                     accept=".wav,.mp3,.aac,.m4a,.ogg,audio/*"
                     onChange={handleFileUpload}
-                    className="hidden"
+                    className="absolute inset-0 opacity-0 cursor-pointer z-20"
                   />
-                  <button
-                    onClick={() => fileInputRef.current?.click()}
-                    className="group relative flex h-20 w-20 items-center justify-center rounded-full bg-[#ff007f] shadow-[0_0_20px_rgba(255,0,127,0.4)] transition-all hover:scale-110 active:scale-95"
-                  >
-                    <Upload className="h-8 w-8 text-white" />
-                  </button>
-                  <p className="text-xs font-bold uppercase tracking-widest text-white/60 text-center max-w-[200px] leading-relaxed">
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center transition-all bg-[#151515] group-hover:scale-105">
+                    <Upload className="w-8 h-8 text-[#ff007f]" />
+                  </div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500 text-center leading-relaxed">
                     {fileName ? fileName : "Upload track to analyze"}
                   </p>
                 </div>
