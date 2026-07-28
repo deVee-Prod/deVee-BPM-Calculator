@@ -82,8 +82,8 @@ export default function BPMCalculator() {
       </header>
 
       <main className="flex-1 flex items-center justify-center p-6 relative z-10">
-        <div className="w-full max-w-xl bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] p-10 space-y-8 border border-white/5 shadow-2xl relative z-20">
-          <div className="flex flex-col items-center gap-8">
+        <div className="w-full max-w-xl bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] p-6 md:p-10 border border-white/5 shadow-2xl relative z-20">
+          <div className="flex flex-col items-center gap-6 md:gap-8">
             <div className="flex flex-col items-center justify-center w-full">
               {bpm ? (
                 <div className="flex flex-col items-center">
@@ -102,7 +102,7 @@ export default function BPMCalculator() {
                 </div>
               ) : (
                 <div 
-                  className="relative w-full border-2 border-dashed rounded-2xl p-12 transition-all duration-500 flex flex-col items-center gap-4 cursor-pointer z-10 border-white/10 hover:border-[#ff007f]/40 hover:bg-[#ff007f]/5"
+                  className="relative w-full border-2 border-dashed rounded-2xl p-8 md:p-12 transition-all duration-500 flex flex-col items-center gap-4 cursor-pointer z-10 border-white/10 hover:border-[#ff007f]/40 hover:bg-[#ff007f]/5"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <input
